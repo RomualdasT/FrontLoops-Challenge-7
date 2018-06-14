@@ -1,0 +1,150 @@
+body {
+  background-color: #f2ce97;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 50%;
+  background-color: #fff;
+  margin: 10vh auto;
+  display: grid;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  grid-template-columns: 1fr 1fr 0.5fr;
+  grid-template-areas:
+  "title texts texts"
+  "author date comments";
+}
+.heading {margin: 0;}
+.title {
+  grid-area: title;
+  background-color: #484956;
+  padding-top: 60px;
+  font-size: 30px;
+  color: #f2f2f2;
+  margin:0;
+  padding-left: 10%
+}
+.bold {
+  font-weight: 700;
+}
+.light {
+  font-weight: 300;
+}
+hr.red-line {
+  max-width: 60px;
+  margin: 0px;
+  margin-top: 15px;
+  height: 3px;
+  line-height: .1em;
+  background-color: #e37b62;
+  border: none;
+}
+.text {
+  grid-area: texts;
+  background-color: #fff;
+  padding-top: 60px;
+  padding-left: 45px;
+  padding-right: 45px;
+  font-size: 18px;
+  font-weight: 300;
+  border-bottom: 4px solid rgba(0,0,0, 0.1);
+}
+.text p:first-child {margin-top:0px;}
+.text::first-letter {
+  font-weight: bold;
+  margin-right: .1em;
+  font-size: 1.4em;
+}
+.author {
+  grid-area: author;
+  background-color: #484956;
+  padding-left: 10%;
+  color: #f2f2f2;
+  font-weight: 300;
+  padding-bottom: 10%;
+}
+.author img {
+  border-radius: 50%;
+    max-width: 60px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.date {
+  grid-area: date;
+  align-self: center;
+  background-color: #fff;
+  padding-left: 45px;
+  font-weight: 300;
+}
+
+.comments {
+  grid-area: comments;
+  align-self: center;
+  background-color: #fff;
+}
+
+.comments img {
+  display: inline;
+  vertical-align: middle;
+}
+#comment-icon {
+  margin-right: 10px;
+}
+#more-icon {
+  margin-left: 20px;
+}
+.comments p {
+  display: inline;
+}
+@media screen and (max-width: 766px) {
+  .container {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "author"
+    "title"
+    "texts"
+    "date"
+    "comments";
+  }
+
+  .author {
+    padding-top: 10%;
+    text-align: center;
+    padding-left: 0px;
+    padding-bottom: 2%;
+  }
+  #author-name {
+    margin-top: 20px;
+    display: block;
+  }
+
+  .title {
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 20px;
+  }
+
+hr.red-line {
+    max-width: 100%;
+  }
+
+  .text {
+    padding-top: 20px;
+    text-align: justify;
+  }
+  .date {
+    justify-self: center;
+    padding-left: 0px;
+  }
+  .comments {
+    justify-self: center;
+    padding-bottom: 5%;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+}
